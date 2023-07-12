@@ -827,3 +827,34 @@ a.cta-read-more{
       -o-transform: rotate(0) scale(1) skew(1deg)
   }
 }
+
+.head-right{
+  display: flex;
+  align-items: center;
+}
+.head-right .icon-bar{
+  padding-left: 20px;
+  display: none;
+  cursor: pointer;
+}
+.menu-responsive{
+  background: #fff;
+  left: -250px;
+  height: 100%;
+  position: fixed;
+  width: 250px;
+  z-index: 199999;
+  top: 0;
+  transition: all ease .5s;
+  overflow-y: auto;
+}
+.menu-responsive.show-menu{
+  left: 0;
+}
+.menu-responsive .icon-close{
+  position: absolute;
+  top: 40px;
+  right: 30px;
+  font-size: 24px;
+  cursor: pointer;
+}

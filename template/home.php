@@ -45,7 +45,7 @@ get_header();
             <section id='about-us'>
                 <div class="container">
                     <div class="row">
-                        <div class="col-12 col-md-7" 
+                        <div class="col-12 col-md-7 item-left" 
                             data-aos="fade-right"
                             data-aos-duration="1000"
                             data-aos-easing="ease-in-sine"  data-aos-delay="50">
@@ -90,7 +90,7 @@ get_header();
                             </div>
                         </div>
                         <div class="row list-service" data-aos="zoom-in" data-aos-duration="1000">
-                            <div class="col-4">
+                            <div class="col-6 col-md-4">
                                 <div class="item-service">
                                     <a href="">
                                         <div class="thumbnail">
@@ -103,7 +103,7 @@ get_header();
                                     </a>
                                 </div>
                             </div>
-                            <div class="col-4">
+                            <div class="col-6 col-md-4">
                                 <div class="item-service">
                                     <a href="">
                                         <div class="thumbnail">
@@ -116,7 +116,7 @@ get_header();
                                     </a>
                                 </div>
                             </div>
-                            <div class="col-4">
+                            <div class="col-6 col-md-4">
                                 <div class="item-service">
                                     <a href="">
                                         <div class="thumbnail">
@@ -129,7 +129,7 @@ get_header();
                                     </a>
                                 </div>
                             </div>
-                            <div class="col-4">
+                            <div class="col-6 col-md-4">
                                 <div class="item-service">
                                     <a href="">
                                         <div class="thumbnail">
@@ -142,7 +142,7 @@ get_header();
                                     </a>
                                 </div>
                             </div>
-                            <div class="col-4">
+                            <div class="col-6 col-md-4">
                                 <div class="item-service">
                                     <a href="">
                                         <div class="thumbnail">
@@ -155,7 +155,7 @@ get_header();
                                     </a>
                                 </div>
                             </div>
-                            <div class="col-4">
+                            <div class="col-6 col-md-4">
                                 <div class="item-service">
                                     <a href="">
                                         <div class="thumbnail">
@@ -376,7 +376,7 @@ get_header();
                             </div>
                         </div>
                         <div class="row content-post-inf">
-                            <div class="col-6" data-aos="fade-right"
+                            <div class="col-6 item" data-aos="fade-right"
                             data-aos-duration="1000"
                             data-aos-easing="ease-in-sine"  data-aos-delay="50">
                                 <div class="item-inf">
@@ -392,7 +392,7 @@ get_header();
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-6" data-aos="fade-left"
+                            <div class="col-6 item" data-aos="fade-left"
                             data-aos-duration="1000"
                             data-aos-easing="ease-in-sine"  data-aos-delay="50">
                                 <div class="item-inf-list">

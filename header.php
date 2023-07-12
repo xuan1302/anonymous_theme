@@ -22,6 +22,21 @@
 
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
+<div class="menu-responsive">
+	<i class="fa fa-times icon-close" aria-hidden="true"></i>
+	<div class="content-menu-mobile">
+		<nav id="site-navigation" class="main-navigation">
+			<?php
+			wp_nav_menu(
+				array(
+					'theme_location' => 'primary_menu',
+					'menu_id'        => 'primary-menu',
+				)
+			);
+			?>
+		</nav>
+	</div>
+</div>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'anonymous' ); ?></a>
 	<div id="top-bar">
@@ -86,15 +101,20 @@
 						);
 						?>
 					</nav>
-					<div class="header-search d-flex align-items-center justify-content-end">
-						<div class="icon-search"><i class="fa fa-search" aria-hidden="true"></i></div>
-						<div class="form-search-header">
-						<form role="search" method="get" class="search-form" action="<?php echo home_url( '/' ); ?>">
-								<input type="search" class="search-field"
-									placeholder="<?php echo esc_attr_x( 'Bạn đang cần tìm kiếm gì?', 'placeholder' ) ?>"
-									value="<?php echo get_search_query() ?>" name="s"
-									title="<?php echo esc_attr_x( 'Search for:', 'label' ) ?>" />
-						</form>
+					<div class='head-right'>
+						<div class="header-search d-flex align-items-center justify-content-end">
+							<div class="icon-search"><i class="fa fa-search" aria-hidden="true"></i></div>
+							<div class="form-search-header">
+							<form role="search" method="get" class="search-form" action="<?php echo home_url( '/' ); ?>">
+									<input type="search" class="search-field"
+										placeholder="<?php echo esc_attr_x( 'Bạn đang cần tìm kiếm gì?', 'placeholder' ) ?>"
+										value="<?php echo get_search_query() ?>" name="s"
+										title="<?php echo esc_attr_x( 'Search for:', 'label' ) ?>" />
+							</form>
+							</div>
+						</div>
+						<div class="icon-bar">
+							<img src="<?php bloginfo('template_url'); ?>/asset/images/pepicons-pop_menu.png" alt="">
 						</div>
 					</div>
 				</div>
