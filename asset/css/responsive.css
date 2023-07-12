@@ -1,0 +1,57 @@
+@media only screen and (max-width: 1599px) {
+
+}
+
+@media only screen and (max-width: 1199px) {
+
+}
+
+@media only screen and (max-width: 1024px) {
+
+}
+
+@media only screen and (max-width: 991px) {
+    .content-slide-item {
+        width: 100%;
+    }
+    .item-slide-home {
+        min-height: 500px;
+    }
+    .content-slide-item h3{
+        font-size: 36px;
+    }
+    .title-about, .title-primary{
+        font-size: 28px;
+    }
+    #site-navigation{
+        display: none;
+    }
+
+}
+@media only screen and (max-width: 800px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 767px) {
+
+}
+
+@media only screen and (max-width: 500px) {
+
+}
+
+@media only screen and (max-width: 480px) {
+
+}
+
+@media only screen and (max-width: 375px) {
+
+}
+
+@media only screen and (max-width: 320px) {
+
+}
