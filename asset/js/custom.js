@@ -64,4 +64,12 @@
   $(".list-icon-fixed ul li a").click(function (event) {
     event.preventDefault();
   });
+
+  $(".icon-bar img").click(function () {
+    $(".menu-responsive").addClass("show-menu");
+  });
+
+  $(".menu-responsive .icon-close").click(function () {
+    $(".menu-responsive").removeClass("show-menu");
+  });
 })(jQuery);

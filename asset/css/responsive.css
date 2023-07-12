@@ -26,6 +26,51 @@
     #site-navigation{
         display: none;
     }
+    .list-item-work-process{
+        display: block;
+    }
+    .item-process{
+        width: 45%;
+        margin-right: 25px;
+        margin-bottom: 25px;
+        display: inline-block;
+    }
+    .item-construction-1 .item{
+        flex-direction: column;
+    }
+    .item-construction-1 .item .thumbnail {
+        width: 100%;
+    }
+    .item-construction-1 .item .content-item-construction{
+        width: 100%;
+    }
+    .item-construction-2{
+        margin-bottom: 30px;
+    }
+    .content-construction .btn-read-more {
+        margin-top: 20px;
+    }
+    #construction {
+        padding: 100px 0 20px 0;
+    }
+    .content-post-inf{
+        display: flex;
+        flex-direction: column;
+    }
+    .content-post-inf .item{
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .item-inf img{
+        width: 100%;
+    }
+    .content-post-inf .item:first-child{
+        margin-bottom: 25px;
+    }
+    .item-inf-list{
+        margin-bottom:25px;
+    }
 
 }
 @media only screen and (max-width: 800px) {
@@ -37,7 +82,63 @@
 }
 
 @media only screen and (max-width: 767px) {
+    .item-slide-home {
+        background-position: center;
+    }
+    .item-process {
+        width: 100%;
+        margin-right: 0;
+    }
+    #about-us .item-left{
+        margin-bottom: 20px;
+    }
+    .list-icon-fixed {
+        position: fixed;
+        right: 20px;
+    }
+    .head-right .icon-bar{
+        display: block;
+    }
+    .content-menu-mobile #site-navigation{
+        display: block;
+    }
+    .content-menu-mobile{
+        padding: 100px 15px 15px 15px;
+    }
+    .content-menu-mobile .main-navigation ul{
+        flex-direction: column;
+    }
+    .content-menu-mobile .main-navigation .menu li {
+        margin-right: 0;
+        padding-bottom: 20px;
+    }
+    .content-menu-mobile .main-navigation .menu li.menu-item-has-children:after{
+        right: 0;
+    }
+    .content-menu-mobile .main-navigation .menu li .sub-menu{
+        background-color: #fff;
+        padding: 0;
+        padding-left: 25px;
+        box-shadow: none;
+        border-radius: 0;
+        margin-top: 0;
+    }
+    .content-menu-mobile .main-navigation .menu li .sub-menu li{
+        padding: 0;
+        border:none
+    }
+    .content-menu-mobile .main-navigation .menu li .sub-menu li a{
+        padding-bottom: 0;
+    }
+    .main-navigation ul {
+        display: flex;
+    }
+}
 
+@media only screen and (max-width: 575px) {
+    .item-construction-2 .thumbnail img{
+        width: 100%;
+    }
 }
 
 @media only screen and (max-width: 500px) {

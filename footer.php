@@ -15,7 +15,7 @@
 		<div class="site-info">
 			<div class="container">
 				<div class="row">
-					<div class="col-5">
+					<div class="col-12">
 						<div class="logo-footer">
 							<img src="http://localhost/cayplus/wp-content/uploads/2023/07/Logo.png" alt="">
 						</div>
@@ -24,7 +24,7 @@
 					<div class="col-3"></div>
 				</div>
 				<div class="row">
-					<div class="col-5">
+					<div class="col-12 col-md-5">
 						<div class="des-footer">
 							Lorem ipsum dolor sit amet consectetur. Tellus dignissim accumsan nasce orci fames. Quis turpis nec nisl facilisi tellus fermentum.
 						</div>
@@ -58,7 +58,7 @@
 							</ul>
 						</div>
 					</div>
-					<div class="col-4">
+					<div class="col-12 col-md-4">
 					<h3 class='title-footer-2'>Dịch vụ của chúng tôi</h3>
 					<nav id="footer-navigation" class="footer-navigation">
 						<?php
@@ -71,7 +71,7 @@
 						?>
 					</nav>
 					</div>
-					<div class="col-3">
+					<div class="col-12 col-md-3">
 						<div class="iframe-fb">
 							<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Ffacebook&tabs&width=340&height=130&small_header=false&adapt_container_width=false&hide_cover=false&show_facepile=false&appId" width="100%" height="130" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
 						</div>
