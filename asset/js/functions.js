@@ -1,8 +1,6 @@
 (function ($) {
-
-    $('.counter').counterUp({
-        delay: 10,
-        time: 2000
-    });
-
+  $(".counter").counterUp({
+    delay: 500,
+    time: 2000,
+  });
 })(jQuery);
