@@ -71,6 +71,27 @@
     .item-inf-list{
         margin-bottom:25px;
     }
+    .content-bar{
+        text-wrap: nowrap;
+        /* overflow: hidden; */
+        animation-name: marqueeLine;
+        animation-duration: 5s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+    }
+    @keyframes marqueeLine {
+        from {
+          transform: translateX(0);
+        }
+        
+        to {
+          transform: translateX(-100%);
+        }
+      }
+    .content-bar .left-bar{
+        margin-right: 50px;
+        
+    }
 
 }
 @media only screen and (max-width: 800px) {

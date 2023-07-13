@@ -22,6 +22,14 @@
 
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
+
+<?php 
+$logo = get_field('logo', 'option');
+$hotline_top_bar = get_field('hotline_top_bar', 'option');
+$hotline_2_top_bar = get_field('hotline_2_top_bar', 'option');
+$email_top_bar = get_field('email_top_bar', 'option');
+$address_top_bar = get_field('address_top_bar', 'option');
+?>
 <div class="menu-responsive">
 	<i class="fa fa-times icon-close" aria-hidden="true"></i>
 	<div class="content-menu-mobile">
@@ -47,18 +55,18 @@
 							<div class="left-bar d-flex justify-content-between">
 								<div class="phone d-flex align-items-center">
 									<img src="<?php bloginfo('template_url'); ?>/asset/images/icon-call.png" alt="">
-									<a class='phone-number1' href="tel:0123456789">0123456789</a>
-									<a class='phone-number2' href="tel:0123456789">0123456789</a>
+									<a class='phone-number1' href="tel:<?php echo $hotline_top_bar; ?>"><?php echo $hotline_top_bar; ?></a>
+									<a class='phone-number2' href="tel:<?php echo $hotline_2_top_bar; ?>"><?php echo $hotline_2_top_bar; ?></a>
 								</div>
 								<div class="email d-flex align-items-center">
 									<img src="<?php bloginfo('template_url'); ?>/asset/images/icon-mail.png" alt="">
-									<a href="mailto:someone@example.com">xuannd@aht-asia.com</a>
+									<a href="mailto:<?php echo $email_top_bar; ?>"><?php echo $email_top_bar; ?></a>
 								</div>
 							</div>
 							<div class="right-bar">
 								<div class="address">
 									<img src="<?php bloginfo('template_url'); ?>/asset/images/icon-mail.png" alt="">
-									<span>Số 27, ngõ 8, Lê Trọng Tấn, Hà Đông, Hà Nội</span>
+									<span><?php echo $address_top_bar; ?></span>
 								</div>
 							</div>
 						</div>
@@ -76,7 +84,7 @@
 							?>
 							<h1 class="site-title">
 								<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-									<img src="http://localhost/cayplus/wp-content/uploads/2023/07/Logo-1.png" alt="">
+									<img src="<?php echo $logo['url'] ?>" alt="">
 								</a>
 							</h1>
 							<?php
@@ -84,7 +92,7 @@
 							?>
 							<p class="site-title">
 								<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-									<img src="http://localhost/cayplus/wp-content/uploads/2023/07/Logo-1.png" alt="">
+									<img src="<?php echo $logo['url'] ?>" alt="">
 								</a>
 							</p>
 							<?php
