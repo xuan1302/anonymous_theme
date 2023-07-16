@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+body{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    margin: 0!important;
+}
+#counter-number{
+    background: #7C9E3D;
+    padding-top: 32px;
+    padding-bottom: 32px;
+}
+.experience-number{
+    text-align: center;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    color: #FFF;
+    margin: 0;
+}
+.experience-title{
+    text-align: center;
+}
+.experience-title p{
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    color: #FFF;
+    margin: 0;
+}
+#core-value{
+    background: #EBF2EB;
+    padding-top: 48px;
+    padding-bottom: 48px;
+}
+.value-subtitle h4{
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 170%; /* 27.2px */
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: #7C9E3D;
+    text-align: center;
+    margin: 0;
+}
+.value-title h1{
+    text-align: center;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    color: #1B3C2D;
+    margin: 0;
+    padding-bottom: 24px;
+}
+.value-des p{
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 180%; /* 28.8px */
+    text-align: center;
+    color: #383838;
+    margin: 0;
+    padding-bottom: 16px;
+}
+@media only screen and (max-width: 991px) {
+    #counter-number{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .experience{
+        padding: 8px 24px 12px;
+        margin-bottom: 32px;
+    }
+    .successfully{
+        padding: 8px 24px 12px;
+        margin-bottom: 32px;
+    }
+    .satisfied{
+        padding: 8px 24px 12px;
+        margin-bottom: 32px;
+    }
+    .professional{
+        padding: 8px 24px 12px;
+    }
+}

@@ -6,34 +6,37 @@
  *
  * @package Anonymous
  */
-
+if (!defined('ABSPATH')) {
+    return;
+}
 get_header();
 ?>
 
-	<main id="primary" class="site-main container">
+	<main id="primary" class="site-main single-page container">
+        <div class="row">
+            <div class="single-content col-xl-9 col-lg-9">
+                <?php
+                    while ( have_posts() ) :
+                        the_post();
 
-		<?php
-		while ( have_posts() ) :
-			the_post();
+                        get_template_part( 'template-parts/content', get_post_type() );
 
-			get_template_part( 'template-parts/content', get_post_type() );
+                        wp_reset_postdata();
 
-			the_post_navigation(
-				array(
-					'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Previous:', 'anonymous' ) . '</span> <span class="nav-title">%title</span>',
-					'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Next:', 'anonymous' ) . '</span> <span class="nav-title">%title</span>',
-				)
-			);
+                    endwhile; // End of the loop.
+                ?>
+            </div>
+            <div class="single-sidebar col-xl-3 col-lg-3">
+                <?php  get_sidebar(); ?>
+            </div>
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
+        </div>
 
-		endwhile; // End of the loop.
-		?>
-
-	</main><!-- #main -->
+	</main>
+    <!-- #main -->
+    <div class="related-post">
+        <?php related_posts() ?>
+    </div>
 
 <?php
 // get_sidebar();

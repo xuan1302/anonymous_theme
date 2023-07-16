@@ -18,6 +18,8 @@ function xxx_scripts() {
     wp_enqueue_style('aos-css' , THEME_URL . 'asset/css/aos.css');
     wp_enqueue_style('style-css' , THEME_URL . 'asset/css/style.css');
     wp_enqueue_style('respon-css' , THEME_URL . 'asset/css/responsive.css');
+    wp_enqueue_style('about-css' , THEME_URL . 'asset/css/about.css');
+    wp_enqueue_style('single-css' , THEME_URL . 'asset/css/single.css');
 
     wp_enqueue_script( 'jquery.counterup.min-js', get_template_directory_uri() . '/asset/js/jquery.counterup.min.js', array( ), THEME_VERSION, true );
     wp_enqueue_script( 'jquery-waypoint', get_template_directory_uri() . '/asset/js/waypoint.js', array( ), THEME_VERSION, true );
