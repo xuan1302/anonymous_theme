@@ -43,6 +43,7 @@ add_action( 'wp_enqueue_scripts', 'xxx_scripts',10 );
 
 add_image_size( 'blog-thumbnail', 420,240, true );
 add_image_size( 'thumbnail-service', 350,250, true );
+add_image_size( 'thumbnail-construct', 360,264, true );
 add_image_size( 'blog-thumbnail-1', 750,360, true );
 add_image_size( 'thumbnail-inf', 550,350, true );
 add_image_size( 'thumbnail-inf-1', 230,160, true );
@@ -79,7 +80,66 @@ if ( ! function_exists( 'mytheme_register_nav_menu' ) ) {
 		register_nav_menus( array(
 	    	'primary_menu' => __( 'Primary Menu', 'anonymous' ),
 	    	'footer_menu'  => __( 'Footer Menu', 'anonymous' ),
+	    	'service_sidebar'  => __( 'Menu sidebar archive 1', 'anonymous' ),
+	    	'design_sidebar'  => __( 'Menu sidebar archive 2', 'anonymous' ),
 		) );
 	}
 	add_action( 'after_setup_theme', 'mytheme_register_nav_menu', 0 );
+}
+
+
+function wpb_init_widgets_custom($id) {
+    register_sidebar(array(
+        'name' => 'Sidebar Category',
+        'id'   => 'cat_sidebar',
+        'before_widget' => '<div class="sidebar-module">',
+        'after_widget' => '</div>',
+        'before_title' => '<h4 class="title-wg">',
+        'after_title' => '</h4>'
+    ));
+}
+add_action('widgets_init','wpb_init_widgets_custom');
+
+add_filter( 'get_the_archive_title', function ( $title ) {
+
+    if( is_category() ) {
+
+        $title = single_cat_title( '', false );
+
+    }
+
+    return $title;
+
+});
+
+
+if ( !function_exists( 'elementor_pagination' ) ) {
+	
+	function elementor_pagination() {
+		
+		$prev_arrow = is_rtl() ? '<i class="fal fa-angle-left"></i>' : '<i class="fal fa-angle-left"></i>';
+		$next_arrow = is_rtl() ? '<i class="fal fa-angle-right"></i>' : '<i class="fal fa-angle-right"></i>';
+		
+		global $wp_query;
+		$total = $wp_query->max_num_pages;
+		$big = 99999; // need an unlikely integer
+		if( $total > 1 )  {
+			 if( !$current_page = get_query_var('paged') )
+				 $current_page = 1;
+			 if( get_option('permalink_structure') ) {
+				 $format = 'page/%#%/';
+			 } else {
+				 $format = '&paged=%#%';
+			 }
+			echo paginate_links(array(
+				'base'			=> str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+				'format'		=> $format,
+				'current'		=> max( 1, get_query_var('paged') ),
+				'total' 		=> $total,
+				'mid_size'		=> 3,
+				'type' 			=> 'list',
+                'prev_next' => false
+			 ) );
+		}
+	}
 }

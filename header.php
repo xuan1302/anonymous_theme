@@ -74,8 +74,9 @@ $address_top_bar = get_field('address_top_bar', 'option');
 				</div>
 			</div>
 		</div>
-	<header id="masthead" class="site-header container">
-	<div class="row">
+	<header id="masthead" class="site-header">
+		<div class="container">
+		<div class="row">
 			<div class="col-12">
 				<div class="content-header d-flex justify-content-between align-items-center">
 					<div class="site-branding">
@@ -128,7 +129,7 @@ $address_top_bar = get_field('address_top_bar', 'option');
 				</div>
 			</div>
 		</div>
-	
+		</div>
 
 		<!-- #site-navigation -->
 	</header><!-- #masthead -->
