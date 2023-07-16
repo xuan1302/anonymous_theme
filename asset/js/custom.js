@@ -72,4 +72,24 @@
   $(".menu-responsive .icon-close").click(function () {
     $(".menu-responsive").removeClass("show-menu");
   });
+
+  var stickyNavTop = jQuery("#masthead").offset().top;
+
+  var stickyNav = function () {
+    var scrollTop = jQuery(window).scrollTop();
+
+    if (scrollTop > stickyNavTop) {
+      jQuery("#masthead").addClass("sticky-menu");
+    } else {
+      jQuery("#masthead").removeClass("sticky-menu");
+    }
+  };
+
+  // stickyNav();
+
+  if ($(window).width() < 991) {
+    jQuery(window).scroll(function () {
+      stickyNav();
+    });
+  }
 })(jQuery);

@@ -11,6 +11,11 @@
 }
 
 @media only screen and (max-width: 991px) {
+    #top-bar{
+        position: relative;
+        height: 45px;
+        overflow: hidden;
+    }
     .content-slide-item {
         width: 100%;
     }
@@ -72,6 +77,7 @@
         margin-bottom:25px;
     }
     .content-bar{
+        position: absolute;
         text-wrap: nowrap;
         /* overflow: hidden; */
         animation-name: marqueeLine;
@@ -85,7 +91,7 @@
         }
         
         to {
-          transform: translateX(-100%);
+          transform: translateX(-130%);
         }
       }
     .content-bar .left-bar{
@@ -95,6 +101,15 @@
 
 }
 @media only screen and (max-width: 800px) {
+    .content-cat-post{
+        flex-direction: column;
+    }
+    .content-cat-post .list-cat-post, .content-cat-post .sidebar-cat {
+        width: 100%;
+    }
+    .sidebar-module figure img{
+        width: 100%;
+    }
 
 }
 
@@ -153,6 +168,13 @@
     }
     .main-navigation ul {
         display: flex;
+    }
+    .page-header-cat h1{
+        font-size: 28px;
+    }
+    .page-header-cat {
+        padding: 0 15px;
+        min-height: 250px;
     }
 }
 
