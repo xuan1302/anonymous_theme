@@ -22,7 +22,33 @@ $background_information = get_field( "background_information" );
 $title_infomation = get_field( "title_infomation" );
 $desciption_information = get_field( "desciption_information" );
 $link_read_more = get_field( "link_read_more" );
-$image_animation = get_field( "image_animation" );
+$image_animation = get_field('image_animation', 'option');
+$category_service = get_field( "category_service" );
+$category_contruction = get_field( "category_contruction" );
+$category_information = get_field( "category_information" );
+
+$args_service = array( 
+    'posts_per_page' => 6,
+    'post_status' => 'publish',
+     'category' => $category_service 
+    );
+$myposts_service = get_posts( $args_service );
+
+$args_contruction = array( 
+    'posts_per_page' => 4,
+    'post_status' => 'publish',
+     'category' => $category_contruction 
+    );
+
+$myposts_contruction = get_posts( $args_contruction );
+
+$args_information = array( 
+    'posts_per_page' => 4,
+    'post_status' => 'publish',
+     'category' => $category_information 
+    );
+
+$myposts_information = get_posts( $args_information );
 
 ?>
     <div class="template-home-custom">
@@ -98,86 +124,29 @@ $image_animation = get_field( "image_animation" );
                                 <p class='des-pri'><?php echo $description_service; ?></p>
                             </div>
                         </div>
-                        <div class="row list-service" data-aos="zoom-in" data-aos-duration="1000">
-                            <div class="col-6 col-md-4">
-                                <div class="item-service">
-                                    <a href="">
-                                        <div class="thumbnail">
-                                            <img src="http://localhost/cayplus/wp-content/uploads/2023/07/Rectangle-164.png" alt="">
-                                        </div>
-                                        <div class="content-des">
-                                            <h4>Sân vườn</h4>
-                                            <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                                        </div>
-                                    </a>
+                        <?php 
+                            if(count($myposts_service) > 0){ ?>
+                                <div class="row list-service" data-aos="zoom-in" data-aos-duration="1000">
+                                    <?php 
+                                        foreach($myposts_service as $item){ ?>
+                                            <div class="col-6 col-md-4">
+                                                <div class="item-service">
+                                                    <a href="<?php echo get_permalink($item->ID); ?>">
+                                                        <div class="thumbnail">
+                                                            <img src="<?php echo get_the_post_thumbnail_url($item->ID, 'thumbnail-service');?>" alt="<?php echo get_the_title($item->ID); ?>">
+                                                        </div>
+                                                        <div class="content-des">
+                                                            <h4><?php echo get_the_title($item->ID); ?></h4>
+                                                            <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        <?php }
+                                    ?>
                                 </div>
-                            </div>
-                            <div class="col-6 col-md-4">
-                                <div class="item-service">
-                                    <a href="">
-                                        <div class="thumbnail">
-                                            <img src="http://localhost/cayplus/wp-content/uploads/2023/07/Rectangle-164.png" alt="">
-                                        </div>
-                                        <div class="content-des">
-                                            <h4>Sân vườn</h4>
-                                            <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-6 col-md-4">
-                                <div class="item-service">
-                                    <a href="">
-                                        <div class="thumbnail">
-                                            <img src="http://localhost/cayplus/wp-content/uploads/2023/07/Rectangle-164.png" alt="">
-                                        </div>
-                                        <div class="content-des">
-                                            <h4>Sân vườn</h4>
-                                            <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-6 col-md-4">
-                                <div class="item-service">
-                                    <a href="">
-                                        <div class="thumbnail">
-                                            <img src="http://localhost/cayplus/wp-content/uploads/2023/07/Rectangle-164.png" alt="">
-                                        </div>
-                                        <div class="content-des">
-                                            <h4>Sân vườn</h4>
-                                            <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-6 col-md-4">
-                                <div class="item-service">
-                                    <a href="">
-                                        <div class="thumbnail">
-                                            <img src="http://localhost/cayplus/wp-content/uploads/2023/07/Rectangle-164.png" alt="">
-                                        </div>
-                                        <div class="content-des">
-                                            <h4>Sân vườn</h4>
-                                            <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-6 col-md-4">
-                                <div class="item-service">
-                                    <a href="">
-                                        <div class="thumbnail">
-                                            <img src="http://localhost/cayplus/wp-content/uploads/2023/07/Rectangle-164.png" alt="">
-                                        </div>
-                                        <div class="content-des">
-                                            <h4>Sân vườn</h4>
-                                            <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+                            <?php }
+                        ?>
                     </div>
                 </div>
             </section>
@@ -237,100 +206,80 @@ $image_animation = get_field( "image_animation" );
                             </div>
                         </div>
                         <div class="row" data-aos="fade-up"
-                            data-aos-duration="1000"
-                            data-aos-easing="ease-in-sine"  data-aos-delay="50">
-                            <div class="col-12">
-                                <div class="item-construction-1">
-                                    <div class="item">
-                                        <div class="thumbnail">
-                                        <div class="wrapper">
-                                            <div class="images">
-                                                <div class="img-1" style="background-image: url(http://localhost/cayplus/wp-content/uploads/2023/07/Rectangle-197.png);"></div>
-                                                <div class="img-2" style="width: 53%;background-image: url(http://localhost/cayplus/wp-content/uploads/2023/07/Rectangle-197-1.png);"></div>
-                                            </div>
-                                            <div class="slider">
-                                                <div class="drag-line" style="left: 53%;">
-                                                <span></span>
+                                            data-aos-duration="1000"
+                                            data-aos-easing="ease-in-sine"  data-aos-delay="50">
+                        <?php 
+                            if(count($myposts_contruction) > 0){ 
+                                $count_contruc = 0;
+                                foreach($myposts_contruction as $item){
+                                    $count_contruc++;
+                                    if($count_contruc == 1){ ?>
+                                            <div class="col-12">
+                                                <div class="item-construction-1">
+                                                    <div class="item">
+                                                        <div class="thumbnail">
+                                                            <div class="wrapper">
+                                                                <?php 
+                                                                    if(count($image_animation) > 0){?>
+                                                                        <div class="images">
+                                                                            <div class="img-1" style="background-image: url(<?php echo $image_animation[0]['thumbnail']['url']?>);"></div>
+                                                                            <div class="img-2" style="width: 53%;background-image: url(<?php echo $image_animation[1]['thumbnail']['url']?>);"></div>
+                                                                        </div>
+                                                                    <?php }
+                                                                ?>
+                                                                <div class="slider">
+                                                                    <div class="drag-line" style="left: 53%;">
+                                                                    <span></span>
+                                                                    </div>
+                                                                    <input type="range" min="0" max="100" value="50">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="content-item-construction">
+                                                            <a href="<?php echo get_permalink($item->ID); ?>">
+                                                                <h4>
+                                                                    <?php echo get_the_title($item->ID); ?>
+                                                                </h4>
+                                                            </a>
+                                                            <div class="des">
+                                                            <?php echo wp_trim_words(get_post_field('post_content', $item->ID), 40, '...'); ?>
+                                                            </div>
+                                                            <a class='read-more' href="<?php echo get_permalink($item->ID); ?>">Xem chi tiết <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></a>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                                <input type="range" min="0" max="100" value="50">
                                             </div>
+                                    <?php } else { ?>
+                                        <div class="col-md-4 col-sm-6 col-12">
+                                            <div class="item-construction-2">
+                                                <div class="item">
+                                                    <div class="thumbnail">
+                                                        <a href="<?php echo get_permalink($item->ID); ?>">
+                                                            <img src="<?php echo get_the_post_thumbnail_url($item->ID, 'thumbnail-construct');?>" alt="<?php echo get_the_title($item->ID); ?>" alt="">
+                                                        </a>
+                                                    </div>
+                                                    <div class="content-item-construction">
+                                                        <a href="<?php echo get_permalink($item->ID); ?>">
+                                                            <h4>
+                                                                <?php echo get_the_title($item->ID); ?>
+                                                            </h4>
+                                                        </a>
+                                                        <div class="des">
+                                                        <?php echo wp_trim_words(get_post_field('post_content', $item->ID), 20, '...'); ?>
+                                                        </div>
+                                                        <a class='read-more' href="<?php echo get_permalink($item->ID); ?>">Xem chi tiết <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></a>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="content-item-construction">
-                                            <h4>
-                                            Thi công sân vườn biệt thự đơn lập tại khu Vinhomes Riverside
-                                            </h4>
-                                            <div class="des">
-                                            Năm thi công: 2020
-                                            Diện tích: 50m2
-                                            Địa điểm: Vinhomes Riverside
-                                            Chủ đầu tư: Chị Mến
-                                            Lorem ipsum dolor sit amet consectetur. Feugiat id facilisi non varius purus magna imperdiet augue.
-                                            </div>
-                                            <a class='read-more' href="">Xem chi tiết <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                                    <?php }
+                                }
+                                 ?>
+
+                            <?php }
+                        ?>
                         </div>
-                        <div class="row" data-aos="fade-up"
-                            data-aos-duration="1000"
-                            data-aos-easing="ease-in-sine"  data-aos-delay="50">
-                            <div class="col-md-4 col-sm-6 col-12">
-                                <div class="item-construction-2">
-                                    <div class="item">
-                                        <div class="thumbnail">
-                                            <img src="http://localhost/cayplus/wp-content/uploads/2023/07/Rectangle-164-6.png" alt="">
-                                        </div>
-                                        <div class="content-item-construction">
-                                            <h4>
-                                            Thi công sân vườn biệt thự đơn lập tại khu Vinhomes Riverside
-                                            </h4>
-                                            <div class="des">
-                                                Lorem ipsum dolor sit amet consectetur. Feugiat id facilisi non varius purus magna imperdiet augue.
-                                            </div>
-                                            <a class='read-more' href="">Xem chi tiết <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-sm-6 col-12">
-                                <div class="item-construction-2">
-                                    <div class="item">
-                                        <div class="thumbnail">
-                                            <img src="http://localhost/cayplus/wp-content/uploads/2023/07/Rectangle-164-6.png" alt="">
-                                        </div>
-                                        <div class="content-item-construction">
-                                            <h4>
-                                            Thi công sân vườn biệt thự đơn lập tại khu Vinhomes Riverside
-                                            </h4>
-                                            <div class="des">
-                                                Lorem ipsum dolor sit amet consectetur. Feugiat id facilisi non varius purus magna imperdiet augue.
-                                            </div>
-                                            <a class='read-more' href="">Xem chi tiết <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-sm-6 col-12">
-                                <div class="item-construction-2">
-                                    <div class="item">
-                                        <div class="thumbnail">
-                                            <img src="http://localhost/cayplus/wp-content/uploads/2023/07/Rectangle-164-6.png" alt="">
-                                        </div>
-                                        <div class="content-item-construction">
-                                            <h4>
-                                            Thi công sân vườn biệt thự đơn lập tại khu Vinhomes Riverside
-                                            </h4>
-                                            <div class="des">
-                                                Lorem ipsum dolor sit amet consectetur. Feugiat id facilisi non varius purus magna imperdiet augue.
-                                            </div>
-                                            <a class='read-more' href="">Xem chi tiết <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                
                         <div class="btn-read-more text-center" data-aos="fade-right"
                             data-aos-duration="1000"
                             data-aos-easing="ease-in-sine"  data-aos-delay="50">
@@ -378,63 +327,72 @@ $image_animation = get_field( "image_animation" );
                                 <p class='des-pri'><?php echo $desciption_information; ?></p>
                             </div>
                         </div>
-                        <div class="row content-post-inf">
-                            <div class="col-6 item" data-aos="fade-right"
-                            data-aos-duration="1000"
-                            data-aos-easing="ease-in-sine"  data-aos-delay="50">
-                                <div class="item-inf">
-                                    <div class="thumbnail">
-                                        <img src="http://localhost/cayplus/wp-content/uploads/2023/07/Rectangle-164-7.png" alt="">
+                        <?php 
+                            if(count($myposts_information) > 0){ ?>
+                                <div class="row content-post-inf">
+                                    <div class="col-6 item" data-aos="fade-right"
+                                    data-aos-duration="1000"
+                                    data-aos-easing="ease-in-sine"  data-aos-delay="50">
+                                    <?php 
+                                    $i = 0;
+                                        foreach($myposts_information as $item){ 
+                                            $i++; 
+                                            if($i == 1){ ?>
+                                                <div class="item-inf">
+                                                    <div class="thumbnail">
+                                                        <a href="<?php echo get_permalink($item->ID); ?>">
+                                                            <img src="<?php echo get_the_post_thumbnail_url($item->ID, 'blog-thumbnail-1');?>" alt="<?php echo get_the_title($item->ID); ?>" >
+                                                        </a>
+                                                    </div>
+                                                    <div class="content-item-inf">
+                                                        <a href="<?php echo get_permalink($item->ID); ?>">
+                                                            <h4 class='post-title'><?php echo get_the_title($item->ID); ?></h4>
+                                                        </a>
+                                                        
+                                                        <div class="des-post">
+                                                            <?php echo wp_trim_words(get_post_field('post_content', $item->ID), 20, '...'); ?>
+                                                        </div>
+                                                        <a class='read-more' href="<?php echo get_permalink($item->ID); ?>">Xem chi tiết <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></a>
+                                                    </div>
+                                                </div>
+                                            <?php }
+                                        ?>
+                                        <?php }
+                                    ?>
                                     </div>
-                                    <div class="content-item-inf">
-                                        <h4 class='post-title'>Lorem ipsum dolor sit amet consectetur. Nunc ullamcorper lorem et placerat faucibus nisl....</h4>
-                                        <div class="des-post">
-                                        Lorem ipsum dolor sit amet consectetur. Tellus dignissim accumsan nasce orci fames. Quis turpis nec nisl facilisi tellus fermentum molestie...
-                                        </div>
-                                        <a class='read-more' href="">Xem chi tiết <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></a>
+                                    <div class="col-6 item" data-aos="fade-left"
+                                    data-aos-duration="1000"
+                                    data-aos-easing="ease-in-sine"  data-aos-delay="50">
+                                        <?php 
+                                        $ii = 0;
+                                            foreach($myposts_information as $item ){
+                                                $ii++;
+                                                if($ii > 1){ ?>
+                                                    <div class="item-inf-list">
+                                                        <div class="thumbnail">
+                                                            <a href="?php echo get_permalink($item->ID); ?>">
+                                                                <img src="<?php echo get_the_post_thumbnail_url($item->ID, 'thumbnail-inf-1');?>" alt="<?php echo get_the_title($item->ID); ?>" >
+                                                            </a>
+                                                        
+                                                        </div>
+                                                        <div class="content-item-inf">
+                                                            <a href="<?php echo get_permalink($item->ID); ?>">
+                                                                <h4 class='post-title'><?php echo get_the_title($item->ID); ?></h4>
+                                                            </a>
+                                                            <div class="des-post">
+                                                            <?php echo wp_trim_words(get_post_field('post_content', $item->ID), 12, '...'); ?>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                <?php }
+                                                ?>
+                                            <?php }
+                                        ?>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-6 item" data-aos="fade-left"
-                            data-aos-duration="1000"
-                            data-aos-easing="ease-in-sine"  data-aos-delay="50">
-                                <div class="item-inf-list">
-                                    <div class="thumbnail">
-                                        <img src="http://localhost/cayplus/wp-content/uploads/2023/07/Rectangle-164-7.png" alt="">
-                                    </div>
-                                    <div class="content-item-inf">
-                                        <h4 class='post-title'>Lorem ipsum dolor sit amet consectetur. Nunc ullamrper...</h4>
-                                        <div class="des-post">
-                                        Lorem ipsum dolor sit amet consectetur. Tellus dignissim accumsan nasce orci fames...
-                                        </div>
-                                    </div>
-                                </div>
+                            <?php }
+                        ?>
 
-                                <div class="item-inf-list">
-                                    <div class="thumbnail">
-                                        <img src="http://localhost/cayplus/wp-content/uploads/2023/07/Rectangle-164-7.png" alt="">
-                                    </div>
-                                    <div class="content-item-inf">
-                                        <h4 class='post-title'>Lorem ipsum dolor sit amet consectetur. Nunc ullamrper...</h4>
-                                        <div class="des-post">
-                                        Lorem ipsum dolor sit amet consectetur. Tellus dignissim accumsan nasce orci fames...
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="item-inf-list">
-                                    <div class="thumbnail">
-                                        <img src="http://localhost/cayplus/wp-content/uploads/2023/07/Rectangle-164-7.png" alt="">
-                                    </div>
-                                    <div class="content-item-inf">
-                                        <h4 class='post-title'>Lorem ipsum dolor sit amet consectetur. Nunc ullamrper...</h4>
-                                        <div class="des-post">
-                                        Lorem ipsum dolor sit amet consectetur. Tellus dignissim accumsan nasce orci fames...
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                         <div class="btn-read-more text-center" data-aos="fade-up"
                             data-aos-duration="1000"
                             data-aos-easing="ease-in-sine"  data-aos-delay="50">

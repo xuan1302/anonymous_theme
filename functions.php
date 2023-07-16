@@ -276,3 +276,7 @@ function related_posts() {
     <?php   }
     wp_reset_query();
 }
+
+// require get_template_directory() . '/inc/custom-postype.php';
+
+require get_template_directory() . '/inc/breadcrumb.php';
