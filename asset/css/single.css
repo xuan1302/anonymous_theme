@@ -27,6 +27,9 @@
     line-height: normal;
 
 }
+.single-sidebar a:hover{
+    color: #7C9E3D;
+}
 .single-sidebar .menu{
     padding: 24px;
     border-radius: 0 0 8px 8px;
@@ -143,4 +146,90 @@
 }
 .show-related  .onHover{
     display: none;
+}
+.sidebar-ads{
+    background-image: url('../images/background-ads.png');
+    background-repeat: no-repeat;
+    padding: 24px;
+    background-size: cover;
+}
+.sidebar-ads .content{
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 180%;
+    color: #F3F3F3;
+}
+.single-content .tag{
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 170%; /* 27.2px */
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: #383838;
+    margin: 0;
+}
+.related-post .show-all{
+    text-align: center;
+    margin-top: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.related-post .show-all a{
+    padding: 8px 24px 5px;
+    border-radius: 20px;
+    background: #7C9E3D;
+    color: #FFF;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-transform: uppercase;
+}
+.related-post .show-all a:hover{
+    background: #1B3C2D;
+}
+@media only screen and (max-width: 767px) {
+    .single-sidebar .widget-title{
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+    }
+    .single-sidebar a{
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+    }
+    .related-post{
+        padding-top: 48px;
+    }
+    .related-title-block .related-title{
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+    }
+    .related-title-block{
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+    .show-related .entry-title h1{
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+    }
+    .single-content{
+        padding-bottom: 64px;
+    }
+    .single-sidebar {
+        padding-bottom: 64px;
+    }
+    .show-related .item{
+        margin-bottom: 32px;
+    }
 }

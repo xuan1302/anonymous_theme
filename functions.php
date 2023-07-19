@@ -231,7 +231,7 @@ function related_posts() {
                     $url_thumbnail = get_the_post_thumbnail_url();
                     global $post;
                     ?>
-                <article class="col-lg-4 col-md-6 item " id="post-<?php esc_attr(the_ID()); ?>" <?php post_class(); ?>>
+                <article class="col-lg-4 col-md-6 col-12 item " id="post-<?php esc_attr(the_ID()); ?>" <?php post_class(); ?>>
                     <?php if (has_post_thumbnail()) : ?>
                     <div class="entry-image">
                         <div class="post-thumbnail">
