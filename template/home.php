@@ -23,16 +23,9 @@ $title_infomation = get_field( "title_infomation" );
 $desciption_information = get_field( "desciption_information" );
 $link_read_more = get_field( "link_read_more" );
 $image_animation = get_field('image_animation', 'option');
-$category_service = get_field( "category_service" );
 $category_contruction = get_field( "category_contruction" );
 $category_information = get_field( "category_information" );
-
-$args_service = array( 
-    'posts_per_page' => 6,
-    'post_status' => 'publish',
-     'category' => $category_service 
-    );
-$myposts_service = get_posts( $args_service );
+$list_category = get_field( "list_category" );
 
 $args_contruction = array( 
     'posts_per_page' => 4,
@@ -125,18 +118,19 @@ $myposts_information = get_posts( $args_information );
                             </div>
                         </div>
                         <?php 
-                            if(count($myposts_service) > 0){ ?>
+                            if(count($list_category) > 0){ ?>
                                 <div class="row list-service" data-aos="zoom-in" data-aos-duration="1000">
                                     <?php 
-                                        foreach($myposts_service as $item){ ?>
+                                        foreach($list_category as $item){ ?>
                                             <div class="col-6 col-md-4">
                                                 <div class="item-service">
-                                                    <a href="<?php echo get_permalink($item->ID); ?>">
+                                                    <a href="<?php echo $item['link']; ?>">
                                                         <div class="thumbnail">
-                                                            <img src="<?php echo get_the_post_thumbnail_url($item->ID, 'thumbnail-service');?>" alt="<?php echo get_the_title($item->ID); ?>">
+                                                            <div class="thumbnail-img" style="background-image: url(<?php echo $item['thumbnail']['url']; ?>);"></div>
+                                                            <!-- <img src="<?php echo $item['thumbnail']['url']; ?>" alt="<?php echo $item['title']; ?>"> -->
                                                         </div>
                                                         <div class="content-des">
-                                                            <h4><?php echo get_the_title($item->ID); ?></h4>
+                                                            <h4><?php echo $item['title']; ?></h4>
                                                             <i class="fa fa-arrow-right" aria-hidden="true"></i>
                                                         </div>
                                                     </a>
@@ -212,6 +206,7 @@ $myposts_information = get_posts( $args_information );
                             if(count($myposts_contruction) > 0){ 
                                 $count_contruc = 0;
                                 foreach($myposts_contruction as $item){
+                                    setup_postdata( $item );
                                     $count_contruc++;
                                     if($count_contruc == 1){ ?>
                                             <div class="col-12">
@@ -255,7 +250,9 @@ $myposts_information = get_posts( $args_information );
                                                 <div class="item">
                                                     <div class="thumbnail">
                                                         <a href="<?php echo get_permalink($item->ID); ?>">
-                                                            <img src="<?php echo get_the_post_thumbnail_url($item->ID, 'thumbnail-construct');?>" alt="<?php echo get_the_title($item->ID); ?>" alt="">
+                                                            <?php 
+                                                             echo get_the_post_thumbnail($item->ID,'blog-thumbnail');
+                                                            ?>
                                                         </a>
                                                     </div>
                                                     <div class="content-item-construction">
@@ -336,12 +333,15 @@ $myposts_information = get_posts( $args_information );
                                     <?php 
                                     $i = 0;
                                         foreach($myposts_information as $item){ 
+                                            setup_postdata( $item );
                                             $i++; 
                                             if($i == 1){ ?>
                                                 <div class="item-inf">
                                                     <div class="thumbnail">
                                                         <a href="<?php echo get_permalink($item->ID); ?>">
-                                                            <img src="<?php echo get_the_post_thumbnail_url($item->ID, 'blog-thumbnail-1');?>" alt="<?php echo get_the_title($item->ID); ?>" >
+                                                            <?php 
+                                                                 echo get_the_post_thumbnail($item->ID,'blog-thumbnail-1');
+                                                            ?>
                                                         </a>
                                                     </div>
                                                     <div class="content-item-inf">
@@ -366,12 +366,16 @@ $myposts_information = get_posts( $args_information );
                                         <?php 
                                         $ii = 0;
                                             foreach($myposts_information as $item ){
+                                                setup_postdata( $item );
                                                 $ii++;
                                                 if($ii > 1){ ?>
                                                     <div class="item-inf-list">
                                                         <div class="thumbnail">
-                                                            <a href="?php echo get_permalink($item->ID); ?>">
-                                                                <img src="<?php echo get_the_post_thumbnail_url($item->ID, 'thumbnail-inf-1');?>" alt="<?php echo get_the_title($item->ID); ?>" >
+                                                            <a href="<?php echo get_permalink($item->ID); ?>">
+                                                                <?php 
+                                                                    echo get_the_post_thumbnail($item->ID,'blog-thumbnail');
+                                                                ?>
+                                                            
                                                             </a>
                                                         
                                                         </div>

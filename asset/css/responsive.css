@@ -98,6 +98,12 @@
         margin-right: 50px;
         
     }
+    .item-construction-2 .thumbnail {
+        height: 180px;
+    }
+    .thumbnail-img {
+        height: 170px;
+    }
 
 }
 @media only screen and (max-width: 800px) {
@@ -179,6 +185,9 @@
 }
 
 @media only screen and (max-width: 575px) {
+    .item-construction-2 .thumbnail{
+        height: auto;
+    }
     .item-construction-2 .thumbnail img{
         width: 100%;
     }
