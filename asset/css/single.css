@@ -191,6 +191,17 @@
 .related-post .show-all a:hover{
     background: #1B3C2D;
 }
+.single-content ol{
+    padding: 0 15px;
+    margin: 0;
+}
+.single-title {
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    padding-bottom: 48px;
+}
 @media only screen and (max-width: 767px) {
     .single-sidebar .widget-title{
         font-size: 18px;
@@ -231,5 +242,18 @@
     }
     .show-related .item{
         margin-bottom: 32px;
+    }
+    .single-title {
+        font-size: 28px;
+        padding-bottom: 32px;
+    }
+    .related-title-block{
+        padding-bottom: 32px;
+    }
+    .related-post{
+        padding-bottom: 48px;
+    }
+    .related-post .show-all{
+        margin-top: 0;
     }
 }

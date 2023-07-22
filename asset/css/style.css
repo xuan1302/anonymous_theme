@@ -476,6 +476,13 @@ item-construction-2 .content-item-construction h4{
   line-height: 29px;
   font-weight: 400;
   margin-bottom: 20px;
+  display: -webkit-box;
+  max-height: 5.2rem;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  -webkit-line-clamp: 3;
 }
 .item-construction-2 .content-item-construction{
   box-shadow: 0px 0px 12px 0px #0000001F;
@@ -1020,7 +1027,7 @@ item-construction-2 .content-item-construction h4{
 }
 .content-cat-post{
   display: flex;
-  gap: 30px;
+  gap: 60px;
 }
 .content-cat-post .list-cat-post{
   width: 70%;

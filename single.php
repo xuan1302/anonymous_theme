@@ -14,28 +14,38 @@ get_header();
 
 	<main id="primary" class="site-main single-page container">
         <div class="row">
-            <div class="single-content col-xl-9 col-lg-9 col-12">
+            <div class="col-12">
                 <?php
-                 hello_elementor_breadcrumbs();
+                hello_elementor_breadcrumbs();
                 ?>
-                <?php
-                 the_content()
-                ?>
-               <p class="tag"><?php the_tags() ?></p>
             </div>
-            <div class="single-sidebar col-xl-3 col-lg-3 col-12">
-                <?php  get_sidebar(); ?>
-                <div class="sidebar-ads">
-                    <div class="image">
-                        <img src="<?php bloginfo('template_url'); ?>/asset/images/Logo-ads.png" alt="">
+        </div>
+        <div class="content-single-page">
+            <div class="row">
+                <div class="single-content col-xl-9 col-lg-9 col-12">
+                    <div class="single-title">
+                        <?php the_title()?>
                     </div>
-                    <div class="content">
-                        <p>Proin ut tellus id bibendum. Odio erat sagittis convallis eu. Ut dui et nulla sed in sed sociis non. Sit sit felis mattis fames sed. Augue sed gravida eu egestas.</p>
+                    <?php
+                    the_content()
+                    ?>
+                    <p class="tag"><?php the_tags() ?></p>
+                </div>
+                <div class="single-sidebar col-xl-3 col-lg-3 col-12">
+                    <?php  get_sidebar(); ?>
+                    <div class="sidebar-ads">
+                        <div class="image">
+                            <img src="<?php bloginfo('template_url'); ?>/asset/images/Logo-ads.png" alt="">
+                        </div>
+                        <div class="content">
+                            <p>Proin ut tellus id bibendum. Odio erat sagittis convallis eu. Ut dui et nulla sed in sed sociis non. Sit sit felis mattis fames sed. Augue sed gravida eu egestas.</p>
+                        </div>
                     </div>
                 </div>
-            </div>
 
+            </div>
         </div>
+
 
 	</main>
     <!-- #main -->

@@ -76,6 +76,14 @@ $background_header_category = get_field('background_header_category', 'option');
 							<?php 
 								get_sidebar('cat');
 							?>
+                            <div class="sidebar-ads">
+                                <div class="image">
+                                    <img src="<?php bloginfo('template_url'); ?>/asset/images/Logo-ads.png" alt="">
+                                </div>
+                                <div class="content">
+                                    <p>Proin ut tellus id bibendum. Odio erat sagittis convallis eu. Ut dui et nulla sed in sed sociis non. Sit sit felis mattis fames sed. Augue sed gravida eu egestas.</p>
+                                </div>
+                            </div>
 						</div>
 					</div>
 			</div>
