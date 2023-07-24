@@ -27,7 +27,7 @@ get_header();
                         <?php the_title()?>
                     </div>
                     <?php
-                    the_content()
+                    wp_trim_words(the_content(), 20, '...');
                     ?>
                     <p class="tag"><?php the_tags() ?></p>
                 </div>

@@ -113,8 +113,6 @@
 }
 .show-related  .entry-des{
     display: -webkit-box;
-    max-height: 5.2rem;
-    -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: normal;

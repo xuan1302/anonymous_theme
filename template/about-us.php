@@ -86,7 +86,7 @@ get_header();
                     <h1>Không gian xanh - Sống an lành</h1>
                 </div>
                 <div class="value-des">
-                    <p>Lorem ipsum dolor sit amet consectetur. Odio ornare fames dignissim in lacus. Pulvinar quis egestas natoque morbi mauris etiam euismod. Semper venenatis nulla neque pharetra pharetra viverra amet. Volutpat amet ullamcorper pharetra consequat sed posuere turpis libero porttitor.</p>
+                    <p><?php echo get_field('des_value') ?></p>
                 </div>
                 <div class="value-image">
                     <?php
